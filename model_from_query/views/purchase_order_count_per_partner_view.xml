@@ -1,0 +1,21 @@
+<odoo>
+      <record id="purchase_order_count_per_partner_pivot_view" model="ir.ui.view">
+            <field name="name">purchase order count per partner</field>
+            <field name="model">purchase.order.count.per.partner</field>
+            <field name="arch" type="xml">
+                <pivot >
+                    <field name="partner_id" type="row"/>
+                    <field name="total_purchase_order"  type="measure"/>
+                    <field name="total_cost"  type="measure"/>
+                 </pivot>
+            </field>
+        </record>
+        <record id="purchase_order_count_per_partner_action" model="ir.actions.act_window">
+                <field name="name">purchase order count per partner</field>
+                <field name="res_model">purchase.order.count.per.partner</field>
+                <field name="view_mode">pivot</field>
+        </record>
+        <menuitem id="menu_purchase_order_count_per_partner" name="Total purchase order  per partner"  action="purchase_order_count_per_partner_action" parent="purchase.purchase_report" />
+
+
+</odoo>
